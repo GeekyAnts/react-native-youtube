@@ -70,7 +70,7 @@ export default class YouTube extends React.Component {
     // Periodically triggeting a forced unnoticable layout rendering until onReady to make sure the
     // native loading progress is shown
     this._interval = setInterval(() => {
-      this.setState({ moduleMargin: Math.random() / 10 });
+      this.setState({ moduleMargin: Math.random() / 6 });
     }, 250);
   }
 
