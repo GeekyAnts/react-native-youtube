@@ -61,6 +61,7 @@ export default class YouTube extends React.Component {
     this.state = {
       moduleMargin: StyleSheet.hairlineWidth * 2,
       fullscreen: props.fullscreen,
+      flag: true,
     };
   }
 
@@ -69,9 +70,13 @@ export default class YouTube extends React.Component {
 
     // Periodically triggeting a forced unnoticable layout rendering until onReady to make sure the
     // native loading progress is shown
+    // this._interval = setInterval(() => {
+    //   this.setState({ moduleMargin: Math.random() / 6 });
+    //  }, 250);
     this._interval = setInterval(() => {
-      this.setState({ moduleMargin: Math.random() / 6 });
-    }, 250);
+      this.setState({ moduleMargin: this.state.flag ? 0.4 : 0.48 });
+      this.setState({ flag: !this.state.flag });
+    }, 1500);
   }
 
   componentWillReceiveProps(nextProps) {
